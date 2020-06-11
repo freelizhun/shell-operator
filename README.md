@@ -21,6 +21,9 @@ Shell-operator provides:
 - __Object selector and properties filter__: Shell-operator can monitor only particular objects and detect changes in their properties.
 - __Simple configuration__: hook binding definition is a JSON structure on stdout.
 
+## 备注
+pixiake/shell-operator:1.0.0-arm64是kubesphere/ks-installer:v2.1.1镜像的基础镜像，用于构建kubesphere的安装工具镜像，其核心在于监听/hooks（默认）目录，通过配置--config参数来配置要监听的事件，此处主要用到onKubernetesEvent监听事件，可以参考[HOOKS.md](HOOKS.md)
+
 ## Quickstart
 
 > You need to have a Kubernetes cluster, and the kubectl must be configured to communicate with your cluster.
