@@ -22,7 +22,7 @@ Shell-operator provides:
 - __Simple configuration__: hook binding definition is a JSON structure on stdout.
 
 ## 备注
-pixiake/shell-operator:1.0.0-arm64是kubesphere/ks-installer:v2.1.1镜像的基础镜像，用于构建kubesphere的安装工具镜像，其核心在于监听/hooks（默认）目录，通过配置--config参数来配置要监听的事件，此处主要用到onKubernetesEvent监听事件，可以参考[HOOKS.md](HOOKS.md)
+pixiake/shell-operator:1.0.0-arm64（参考dockersfile）是kubesphere/ks-installer:v2.1.1镜像的基础镜像，用于构建kubesphere的安装工具镜像，其核心在于监听/hooks（默认）目录，通过配置--config参数来配置要监听的事件，此处主要用到onKubernetesEvent监听事件，可以参考[HOOKS.md](HOOKS.md)
 
 ## Quickstart
 
@@ -43,6 +43,7 @@ Let's create a small operator that will watch for all Pods in all Namespaces and
 ```bash
 #!/usr/bin/env bash
 
+#只要cat输出一下就可以了，python里边的也是，print一下就可以
 if [[ $1 == "--config" ]] ; then
   cat <<EOF
   {"onKubernetesEvent": [
